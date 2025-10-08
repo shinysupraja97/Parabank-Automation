@@ -1,0 +1,65 @@
+{
+  "home_page": {
+    "register_link": { "by": "link_text", "value": "Register" },
+    "logout_link":   { "by": "link_text", "value": "Log Out" }
+  },
+
+  "register_page": {
+    "firstName": { "by": "name", "value": "customer.firstName" },
+    "lastName":  { "by": "name", "value": "customer.lastName" },
+    "address":   { "by": "name", "value": "customer.address.street" },
+    "city":      { "by": "name", "value": "customer.address.city" },
+    "state":     { "by": "name", "value": "customer.address.state" },
+    "zip":       { "by": "name", "value": "customer.address.zipCode" },
+    "phone":     { "by": "name", "value": "customer.phoneNumber" },
+    "ssn":       { "by": "name", "value": "customer.ssn" },
+    "username":  { "by": "name", "value": "customer.username" },
+    "password":  { "by": "name", "value": "customer.password" },
+    "confirm":   { "by": "name", "value": "repeatedPassword" },
+    "btn_register": {
+      "by": "xpath",
+      "value": "//form[.//*[@name='customer.firstName']]//input[@type='submit' and (@value='Register' or @value='REGISTER')]"
+    },
+
+    "success_text": {
+      "by": "xpath",
+      "value": "//*[contains(.,'Your account was created successfully') or contains(.,'Welcome') or contains(.,'Account Services')]"
+    },
+
+    "general_error": {
+      "by": "xpath",
+      "value": "//*[contains(@class,'error') or contains(@class,'validation') or contains(.,'already exists') or contains(.,'required') or contains(.,'do not match')]"
+    },
+
+    "first_name_error": { "by": "xpath", "value": "//input[@name='customer.firstName']/following::span[contains(@class,'error') or contains(text(),'First name')][1]" },
+    "last_name_error":  { "by": "xpath", "value": "//input[@name='customer.lastName']/following::span[contains(@class,'error') or contains(text(),'Last name')][1]" },
+    "address_error":    { "by": "xpath", "value": "//input[@name='customer.address.street']/following::span[contains(@class,'error') or contains(text(),'Address')][1]" },
+    "city_error":       { "by": "xpath", "value": "//input[@name='customer.address.city']/following::span[contains(@class,'error') or contains(text(),'City')][1]" },
+    "zip_error":        { "by": "xpath", "value": "//input[@name='customer.address.zipCode']/following::span[contains(@class,'error') or contains(text(),'Zip') or contains(text(),'numeric')][1]" },
+    "phone_error":      { "by": "xpath", "value": "//input[@name='customer.phoneNumber']/following::span[contains(@class,'error') or contains(text(),'Phone')][1]" },
+    "password_error":   { "by": "xpath", "value": "//input[@name='customer.password']/following::span[contains(@class,'error') or contains(text(),'Password')][1]" },
+    "confirm_error":    { "by": "xpath", "value": "//input[@name='repeatedPassword']/following::span[contains(@class,'error') or contains(text(),'match') or contains(text(),'Confirm')][1]" }
+  },
+
+  "login_page": {
+    "username": { "by": "name", "value": "username" },
+    "password": { "by": "name", "value": "password" },
+    "btn_login":{ "by": "xpath", "value": "//input[@value='Log In' or @type='submit' or @value='LOGIN']" },
+
+    "error":      { "by": "xpath", "value": "//*[contains(@class,'error') or contains(.,'Error')]" },
+    "error_panel":{ "by": "xpath", "value": "//*[@id='loginPanel']//*[contains(@class,'error') or contains(text(),'invalid') or contains(text(),'required')]" },
+    "error_msg":  { "by": "xpath", "value": "//*[@id='loginPanel']//*[contains(text(),'invalid') or contains(text(),'required') or contains(text(),'could not')]"}
+  },
+
+  "accounts_page": {
+    "overview_link": { "by": "link_text", "value": "Accounts Overview" },
+    "overview_heading": { "by": "xpath", "value": "//h1[normalize-space()='Accounts Overview']" },
+    "overview_table": { "by": "xpath", "value": "//h1[normalize-space()='Accounts Overview']/following::table[1]" },
+    "first_account_link": { "by": "xpath", "value": "(//h1[normalize-space()='Accounts Overview']/following::table[1]//a)[1]" },
+    "any_balance_cell": { "by": "xpath", "value": "(//h1[normalize-space()='Accounts Overview']/following::table[1]//td[contains(.,'$') or matches(., '\\\\d[\\\\d,]*\\\\.\\\\d{2}')])[1]" }
+  },
+
+  "account_details": {
+    "available_balance_cell": { "by": "xpath", "value": "//td[normalize-space()='Available balance:']/following-sibling::td" }
+  }
+}
