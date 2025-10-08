@@ -1,5 +1,4 @@
 # Parabank-Automation
-# ParaBank Automation – Sign Up and Login Flow
 
 This project automates the ParaBank sign-up and login flows using Behave (BDD) and the Page Object Model (POM) pattern.
 It creates a new user account, signs in with that account, and captures and prints the Total balance displayed on the Accounts Overview page.
